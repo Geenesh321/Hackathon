@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SignUP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'K2D', sans-serif;
+        }
+
+        :root {
+            --primary-color: black;
+            --secondary-color: white;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .SignUP-container {
+            position: relative;
+            width: 500px;
+            padding: 265px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .SignUP-Image {
+            position: absolute;
+            width: 60%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            top: 0px;
+            left: 0px;
+            height: 100%;
+        }
+
+        .SignUP-Form {
+            position: absolute;
+            width: 40%;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            top: 0px;
+            right: 0px;
+            height: 100%;
+        }
+
+        .SignUP_Text span {
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 78%;
+        }
+
+        .SignUP_Text h1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .SignUP_Text p {
+            font-size: 12px;
+            opacity: 0.5;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        form {
+            max-width: 315px;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 2px solid #000000;
+            border-radius: 2px;
+            box-sizing: border-box;
+            background-color: #f2f2f2;
+        }
+
+        button[type="submit"] {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 8px 133px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .Login_Link {
+            position: relative;
+            top: 250px;
+            left: 94%;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .Login_Link .link {
+            color: var(--primary-color);
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="SignUP-container">
+        <div class="SignUP-Image"> </div>
+
+        <div class="SignUP-Form">
+            <div class="SignUP_Text">
+                <span>ELEVATE </span>
+                <h1>Create an account</h1>
+                <p>Let's get started with a 30-day trial</p>
+            </div>
+            <form id="signup-form" onsubmit="validateForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="phone">Phone No.:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password"
+                    required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="Login_Link">Already have an account ?
+            <span><a href="/Login/Login.HTML" class="link">Login</a></span>
+        </div>
+
+    </div>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get form inputs
+            var nameInput = document.getElementById('name');
+            var phoneInput = document.getElementById('phone');
+            var emailInput = document.getElementById('email');
+            var passwordInput = document.getElementById('password');
+            var confirmPasswordInput = document.getElementById('confirm-password');
+
+            // Reset previous error messages
+            var errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function (element) {
+                element.remove();
+            });
+
+            var isValid = true;
+
+            // Validate name (should not contain numbers or symbols)
+            var nameRegex = /^[a-zA-Z\s]*$/;
+            if (!nameRegex.test(nameInput.value)) {
+                isValid = false;
+                showError(nameInput, 'Name should only contain letters and spaces');
+            }
+
+            // Validate phone number (check for a valid format)
+            var phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phoneInput.value)) {
+                isValid = false;
+                showError(phoneInput, 'Phone number should be a 10-digit number');
+            }
+
+            // Validate email (check for @ and .com)
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                isValid = false;
+                showError(emailInput, 'Please enter a valid email address');
+            }
+
+            // Validate password (should be at least 8 characters long)
+            if (passwordInput.value.length < 8) {
+                isValid = false;
+                showError(passwordInput, 'Password should be at least 8 characters long');
+            }
+
+            // Validate confirm password (should match the password)
+            if (confirmPasswordInput.value !== passwordInput.value) {
+                isValid = false;
+                showError(confirmPasswordInput, 'Passwords do not match');
+            }
+
+            // If all fields are valid, submit the form
+            if (isValid) {
+                document.getElementById('signup-form').submit();
+            }
+        }
+
+        function showError(inputElement, errorMessage) {
+            alert(errorMessage);
+        }
+    </script>
+
+</body>
+
+</html>
