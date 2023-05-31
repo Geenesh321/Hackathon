@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'K2D', sans-serif;
+        }
+
+        :root {
+            --Primary-color: black;
+            --Secondary-color: white;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f2f2f2;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content img {
+            max-width: 180px;
+            margin-bottom: 10px;
+        }
+
+        .admin-Form {
+            background: var(--Secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.886);
+            width: 300px;
+        }
+
+        .admin-Form label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--Primary-color);
+        }
+
+        .admin-Form input[type="email"],
+        .admin-Form input[type="password"] {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--Primary-color);
+        }
+
+        .Admin-button {
+            background: var(--Primary-color);
+            color: var(--Secondary-color);
+            padding: 10px 128px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            
+            if (email === 'admin@iic.edu.np' && password === 'admin123') {
+                alert('Login successful');
+            } else {
+                alert('Invalid email or password');
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+
+
+    <form class="admin-Form" onsubmit="validateForm(event)">
+
+        <div class="content">
+            <img src="../Image/logo.jpg" alt="Logo">
+            <p>Admin Login</p>
+        </div>
+            
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="Admin-button">LogIn</button>
+    </form>
+
+</body>
+</html>

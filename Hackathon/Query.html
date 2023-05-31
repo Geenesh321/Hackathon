@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .query {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .rectangle {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #F2F3F5;
+            border-radius: 8px;
+            width: 500px;
+            height: 80px;
+        }
+
+        #uploaded-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .search-box {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        #search-input {
+            border: none;
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+
+        .pop-up {
+            position: absolute;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 311px;
+        }
+
+        .pop-up:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="query">
+        <div class="rectangle">
+            <img id="uploaded-photo" src="uploaded_photo.jpg" alt="Uploaded Photo">
+            <div class="search-box">
+                <input id="search-input" type="text" placeholder="What's on your mind, Geenesh?">
+                <a href="popup.html" class="pop-up">Choose a photo</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
