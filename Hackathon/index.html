@@ -1,0 +1,69 @@
+<html>
+    <head>
+    <meta charset="viewport" content="width=device-width initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="profile">
+                <div class="elvt">
+                    <div class="image">
+                        <label for="profile"><i class='bx bx-edit-alt'></i></label>
+                        <input type="file" id="profile" onchange="handleFile(event)">
+                        <img class="img" src="https://th.bing.com/th/id/OIP.CsCEiIgcxJ54PXFJ-Ep5nQAAAA?pid=ImgDet&rs=1">
+                    </div>
+                    <h1>Team Elevate</h1>
+                </div>
+                <script>
+                    const img = document.querySelector(".image");
+                    img.addEventListener("mouseenter", ()=>{
+                        document.querySelector(".image label").style.display = "flex";
+                    })
+                    img.addEventListener("mouseleave", ()=>{
+                        document.querySelector(".image label").style.display = "none";
+                    })
+
+                    function handleFile(event) {
+                        const path = URL.createObjectURL(event.target.files[0]);
+                        document.querySelector(".img").src = path;
+                    }
+                </script>
+                <br>
+                <div class="input">
+                    <label>Username:</label>
+                    <input type="text" id="username" readonly value="Suyog Shakya">
+                </div>
+                <div class="input">
+                    <label> Email:</label>
+                    <input type="email" readonly  id="email" value="">
+                </div>
+                <div class="input">
+                    <label>Address:</label>
+                    <input type="text" readonly id="address" value="" >
+                </div>
+                <div class="input">
+                    <label>Faculty:</label>
+                    <input type="text" readonly id="faculty" value="">
+                </div>
+                <div class="input">
+                    <label>Year:</label>
+                    <input type="text" readonly id="year" value="">
+                </div>
+                <div class="input">
+                    <label>Group:</label>
+                    <input type="text" readonly id="group" value="">
+                </div>
+            </div>
+        </div>
+        <div class="posts">
+
+        </div>
+    </body>
+</html>

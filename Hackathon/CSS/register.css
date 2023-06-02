@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --mainColor: #8c2de2; 
+}
+.register-section{
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    border-radius: 15px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+}
+.register-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.register-section .register-form{
+    min-width: 500px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.register-section .register-form h2{
+    font-size: 32px;
+    text-shadow: 1px 1px 5px var(--mainColor);
+    position: relative;
+    top: -20px;
+}
+.register-section .register-form h2:before{
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 4px;
+    background-color: var(--mainColor);
+    border-radius: 10px;
+    top: 39px;
+    left: 65px;
+}
+.register-section .register-form form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 40px;
+}
+.register-section .register-form p a{
+    color: var(--mainColor);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+}
+.register-section .register-form form input{
+    font-size: 16px;
+    border: 1px solid rgba(0,0,0);
+    border-radius: 20px;
+    padding: 5px 10px;
+    outline: none;
+}
+.register-section .register-form form .error{
+    color: red;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.register-section .register-form form button{
+    padding: 5px 0;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #8c2de2, rgb(95, 95, 206));
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    overflow: hidden;
+    border: 1px solid black;
+}
+.register-section .register-form form button:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 60px;
+    transform: rotate(25deg);
+    top: -10px;
+    left: -30px;
+    background: #f3f3f3;
+    box-shadow: 0px 0px 10px white;
+    filter: blur(1px);
+    opacity: 0.8;
+    transition: all 0.8s ease;
+}
+.register-section .register-form form button:hover:before{
+    left: 105%;
+}
+.register-section .image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+.register-section .image img{
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.register-section .image img:hover{
+    transform: scale(1.1);
+}

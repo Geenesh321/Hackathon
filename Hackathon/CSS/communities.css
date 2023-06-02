@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --mainColor: #8c2de2;
+}
+.community-section{
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.05);
+    padding: 0 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+.community-section .heading{
+    text-align: center;
+    padding: 15px 0;
+}
+.community-list{
+    padding: 20px;
+}
+.community-list .community{
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.community-list .community h3{
+    font-size: 15px;
+    color: rgba(0,0,0,0.6);
+}
+.community-list .community .buttons{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.community-list .community .buttons a{
+    width: 70px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.join a{
+    border: none;
+    background-color: rgba(0, 128, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+.leave{
+    border: 2px solid var(--mainColor);
+    color: var(--mainColor);
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+.leave:hover{
+    background-color: red;
+    border: none;
+    color: white;
+    transform: scale(0.9);
+}
+.chat{
+    border: 2px solid var(--mainColor);
+    background-color: var(--mainColor);
+    color: white;
+    transition: all 0.5s ease;
+}
+.chat:hover{
+    transform: scale(1.1);
+}

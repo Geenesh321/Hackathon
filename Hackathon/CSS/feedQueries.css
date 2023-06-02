@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mainColor: #8c2de2;
+}
+.queries{
+    width: 100%;
+    margin: 20px 0;
+}
+.queries .query-card{
+    background-color: whitesmoke;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    width: 100%;
+}
+.queries .query-card .heading{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+.queries .query-card .heading img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+.queries .query-card .heading h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.queries .query-card .query{
+    padding: 10px 20px;
+}
+.queries .query-card img{
+    width: 100%;
+}
+.queries .query-card .show-replies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 20px;
+    background: rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+.queries .query-card .show-replies:hover{
+    background: rgba(0,0,0,0.1);
+}
+.queries .query-card .show-replies i{
+    font-size: 24px;
+}
+.queries .query-card .show-replies a{
+    text-decoration: none;
+    color: black;
+}

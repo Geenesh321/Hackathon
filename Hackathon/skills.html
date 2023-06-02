@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>React</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: black;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #d06c6ce0;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            height: 80px;
+            padding: 0 20px;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo styles */
+        .navbar-logo img {
+            height: 61px;
+            width: 95px;
+        }
+
+        /* Links styles */
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 40px;
+        }
+
+        .navbar-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .searchbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search {
+            margin-top: 10px;
+        }
+
+        .navbar-search input[type="text"] {
+            height: 30px;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Icons styles */
+        .navbar-icons {
+            display: flex;
+        }
+
+        .navbar-icons a,
+        .bx {
+            margin-left: 25px;
+            color: var(--secondary-color);
+            font-size: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-icons a i,
+        .bx {
+            align-items: center;
+            height: 40px;
+            width: 40px;
+        }
+
+        .navbar-icons a:hover,
+        .bx:hover {
+            color: var(--accent-color);
+        }
+
+
+        .content {
+            padding: 100px 10px;
+            text-align: center;
+        }
+
+        .js_Heading {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 800px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .image-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .Course {
+            padding: 100px 10px;
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .heading {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .online_Coure {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .course-button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-button:hover {
+            background-color: #cc4444;
+        }
+
+        .Book {
+            margin-top: 40px;
+        }
+
+        .Book h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .framework-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .framework-button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .framework-button:hover {
+            background-color: #cc4444;
+        }
+        .projects{
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 6%;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .projects ul{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+        .projects ul li{
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .projects ul li:hover{
+            background-color: rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#"><img src="../Image/logo.jpg" alt="Logo"></a>
+        </div>
+
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Vacancy</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="Career.HTML">Career</a></li>
+        </ul>
+
+        <div class="navbar-search">
+            <form action="#" method="GET" class="searchbar">
+                <input type="text" id="search-item" placeholder="Search..." onkeyup="search()">
+                <i class="bx bx-search-alt-2"></i>
+            </form>
+        </div>
+
+        <div class="navbar-icons">
+            <a href="Login.html"><i class="bx bxs-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1 class="js_Heading">React</h1>
+
+        <div class="content-wrapper">
+            <div class="text-content">
+                <p>
+                    JReact is a popular JavaScript library used for building user interfaces. It was developed by
+                    Facebook and is widely adopted in the web development community. React utilizes a component-based
+                    architecture, which means that the user interface is broken down into reusable, self-contained
+                    components. This modular approach makes it easier to develop and maintain complex applications.
+                    <br><br>
+                    One of the key features of React is its use of a virtual DOM (Document Object Model). The virtual
+                    DOM is a lightweight representation of the actual DOM, and React uses it to efficiently update and
+                    render components. When a component's state changes, React compares the virtual DOM with the real
+                    DOM and updates only the necessary parts, minimizing the number of DOM manipulations and improving
+                    performance.
+                    <br><br>
+                    React also promotes a declarative programming model. Developers describe how the UI should look at
+                    any given moment, and React takes care of updating the UI to match that description. This makes the
+                    code more predictable and easier to reason about, as developers don't need to worry about
+                    imperatively manipulating the UI.
+                    <br><br>
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="../Image/AUDI.jpg" alt="Road Map">
+            </div>
+        </div>
+
+        <div class="Course">
+            <h1 class="heading">React Projects</h1>
+            <p style="margin-top: -10px;color: rgba(0, 0, 0, 0.5);font-size: 16px;">Click on Projects to Download Project Files</p>
+            <div class="projects">
+                <div class="p1">
+                    <h2>Beginerss Projects</h2>
+                    <ul>
+                        <li>Login SignUp</li>
+                        <li>Portfolio Template</li>
+                    </ul>
+                </div>
+                <div class="p1">
+                    <h2>Intermediate Projects</h2>
+                    <ul>
+                        <li>CRUD Application</li>
+                        <li>Stock Management System</li>
+                        <li>To Do List</li>
+                    </ul>
+                </div>
+                <div class="p1">
+                    <h2>Expert Level Projects</h2>
+                    <ul>
+                        <li>E-commerce Website</li>
+                        <li>Online Meet</li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+            <h1 class="heading">Online Course</h1>
+            <div class="online_Coure">
+                <button class="course-button">JavaScript</button>
+                <button class="course-button">Python</button>
+                <button class="course-button">Java</button>
+                <button class="course-button">C++</button>
+                <button class="course-button">JavaScript</button>
+                <button class="course-button">Python</button>
+                <button class="course-button">Java</button>
+                <button class="course-button">C++</button>
+            </div>
+            <div class="Book">
+                <h1 class="heading">Book</h1>
+                <div class="framework-list">
+                    <button class="framework-button">Django</button>
+                    <button class="framework-button">Flask</button>
+                    <button class="framework-button">Pyramid</button>
+                    <button class="framework-button">FastAPI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

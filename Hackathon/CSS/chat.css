@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mainColor: #8c2de2;
+}
+body{
+    max-height: 100vh;
+}
+section.chat-section{
+    width: calc(100% - 300px);
+    max-height: 100vh;
+}
+.chat-section .heading{
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    padding: 0px 40px;
+    height: 80px;
+}
+.chat-section .friend-info{
+    display: flex;
+    align-items: center;    
+    gap: 20px;
+}
+.chat-section .friend-info img{
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+.chat-section .heading i{
+    border: 2px solid red;
+    color: red;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.chat-section .heading i:hover{
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    transform: scale(0.9);
+}
+
+.chat-section .messages{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    height: calc(100vh - 162px);
+    overflow: auto;
+    scroll-margin-block-end: inherit;
+}
+
+.chat-section .messages .sent-msg{
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
+}
+.chat-section .messages .msg{
+    transition: all 0.5s ease;
+}
+.chat-section .messages .msg:hover{
+    background: rgba(0,0,0,0.1);
+}
+.chat-section .messages .sent-msg p{
+    background-color: #8a2de250;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.chat-section .messages .sent-msg img{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+
+.chat-section .messages .received-msg{
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+}
+.chat-section .messages .received-msg p{
+    background-color: rgba(0,0,0,0.05);
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.chat-section .messages .received-msg img{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 50%;
+}
+
+.chat-section form{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 30px;
+    padding-bottom: 25px;
+    background-color: rgba(0,0,0,0.03);
+}
+.chat-section form input{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.5);
+    outline: none;
+    padding: 0 30px;
+    font-size: 16px;
+
+}
+.chat-section form button{
+    background-color: var(--mainColor);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: white;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.chat-section form button:hover{
+    transform: scale(1.1);
+}
+.chat-section form button i{
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+}

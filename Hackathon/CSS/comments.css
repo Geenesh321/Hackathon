@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --mainColor: #8c2de2;
+}
+
+.comment-section{
+    background-color: rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+.comment-section .heading{
+    display: flex;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-section .heading i{
+    border: 2px solid red;
+    color: red;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.comment-section .heading i:hover{
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    transform: scale(0.9);
+}
+
+.comment-section .comments{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    padding: 20px 30px;
+}
+.comment-section .comments .comment{
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.comment-section .comments .comment .sender-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.comment-section .comments .comment .sender-info h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+.comment-section .comments .comment .sender-info img{
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+.comment-section .comments .comment .message{
+    padding: 10px 30px;
+    padding-bottom: 20px;
+}
+
+.post-comment{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px 30px;
+    box-shadow: 0 0 10px black;
+}
+.post-comment form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+.post-comment form textarea{
+    resize: none;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 16px;
+    display: flex;
+    height: 60px;
+}
