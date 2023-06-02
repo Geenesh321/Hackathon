@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>React</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #d06c6ce0;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            height: 80px;
+            padding: 0 20px;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo styles */
+        .navbar-logo img {
+            height: 61px;
+            width: 95px;
+        }
+
+        /* Links styles */
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 40px;
+        }
+
+        .navbar-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .searchbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-search {
+            margin-top: 10px;
+        }
+
+        .navbar-search input[type="text"] {
+            height: 30px;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Icons styles */
+        .navbar-icons {
+            display: flex;
+        }
+
+        .navbar-icons a,
+        .bx {
+            margin-left: 25px;
+            color: var(--secondary-color);
+            font-size: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-icons a i,
+        .bx {
+            align-items: center;
+            height: 40px;
+            width: 40px;
+        }
+
+        .navbar-icons a:hover,
+        .bx:hover {
+            color: var(--accent-color);
+        }
+
+
+        .content {
+            padding: 100px 10px;
+            text-align: center;
+        }
+
+        .js_Heading {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text-content {
+            flex: 1;
+            max-width: 800px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .text-content p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .image-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .Course {
+            padding: 100px 10px;
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .heading {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .online_Coure {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .course-button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-button:hover {
+            background-color: #cc4444;
+        }
+
+        .Book {
+            margin-top: 40px;
+        }
+
+        .Book h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .framework-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .framework-button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .framework-button:hover {
+            background-color: #cc4444;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#"><img src="../Image/logo.jpg" alt="Logo"></a>
+        </div>
+
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Vacancy</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="Career.HTML">Career</a></li>
+        </ul>
+
+        <div class="navbar-search">
+            <form action="#" method="GET" class="searchbar">
+                <input type="text" id="search-item" placeholder="Search..." onkeyup="search()">
+                <i class="bx bx-search-alt-2"></i>
+            </form>
+        </div>
+
+        <div class="navbar-icons">
+            <a href="Login.html"><i class="bx bxs-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1 class="js_Heading">React</h1>
+
+        <div class="content-wrapper">
+            <div class="text-content">
+                <p>
+                    JReact is a popular JavaScript library used for building user interfaces. It was developed by
+                    Facebook and is widely adopted in the web development community. React utilizes a component-based
+                    architecture, which means that the user interface is broken down into reusable, self-contained
+                    components. This modular approach makes it easier to develop and maintain complex applications.
+                    <br><br>
+                    One of the key features of React is its use of a virtual DOM (Document Object Model). The virtual
+                    DOM is a lightweight representation of the actual DOM, and React uses it to efficiently update and
+                    render components. When a component's state changes, React compares the virtual DOM with the real
+                    DOM and updates only the necessary parts, minimizing the number of DOM manipulations and improving
+                    performance.
+                    <br><br>
+                    React also promotes a declarative programming model. Developers describe how the UI should look at
+                    any given moment, and React takes care of updating the UI to match that description. This makes the
+                    code more predictable and easier to reason about, as developers don't need to worry about
+                    imperatively manipulating the UI.
+                    <br><br>
+                    Furthermore, React has a strong ecosystem with a rich collection of third-party libraries and tools.
+                    This ecosystem includes popular state management solutions like Redux and MobX, as well as tools for
+                    routing (React Router) and form handling (Formik). React can also be used to build native mobile
+                    applications using React Native, allowing developers to leverage their existing React skills across
+                    different platforms.
+                    <br><br>
+                    In summary, React is a powerful JavaScript library for building user interfaces. Its component-based
+                    architecture, virtual DOM, and declarative programming model make it efficient, scalable, and easy
+                    to work with. Its extensive ecosystem and cross-platform capabilities make it a top choice for
+                    developers looking to create dynamic and interactive web applications.
+                    <br><br>
+                    JavaScript is primarily used for client-side scripting, meaning it runs on the user's web browser
+                    rather than the web server. This enables the creation of interactive features that can respond to
+                    user actions in real-time.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="../Image/AUDI.jpg" alt="Road Map">
+            </div>
+        </div>
+
+        <div class="Course">
+            <h1 class="heading">Online Course</h1>
+            <div class="online_Coure">
+                <button class="course-button">JavaScript</button>
+                <button class="course-button">Python</button>
+                <button class="course-button">Java</button>
+                <button class="course-button">C++</button>
+                <button class="course-button">JavaScript</button>
+                <button class="course-button">Python</button>
+                <button class="course-button">Java</button>
+                <button class="course-button">C++</button>
+            </div>
+            <div class="Book">
+                <h1 class="heading">Book</h1>
+                <div class="framework-list">
+                    <button class="framework-button">Django</button>
+                    <button class="framework-button">Flask</button>
+                    <button class="framework-button">Pyramid</button>
+                    <button class="framework-button">FastAPI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

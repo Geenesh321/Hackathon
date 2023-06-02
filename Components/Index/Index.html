@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: black;
+            --secondary-color: white;
+        }
+        
+        /* Navigation bar styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            height: 80px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+        
+        /* Logo styles */
+        .navbar-logo img {
+            height: 61px;
+            width: 95px;
+            margin-left: -5px;
+        }
+        
+        /* Links styles */
+        .navbar-links {
+            display: flex;
+        }
+        
+        .navbar-links li {
+            margin-right: 80px;
+        }
+        
+        .navbar-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .searchbar {
+            display: flex;
+        
+        }
+        
+        .navbar-search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .navbar-search input[type="text"] {
+            height: 30px;
+            padding: 10px;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 3px;
+            font-size: 20px;
+            margin-right: -10px;
+        }
+        
+        /* Icons styles */
+        .navbar-icons {
+            display: flex;
+        }
+        
+        .navbar-icons a,
+        .bx {
+            margin-left: 25px;
+            color: var(--secondary-color);
+            font-size: 30px;
+        }
+        
+        .navbar-icons a i,
+        .bx {
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            color: var(--secondary-color);
+        }
+        
+        /* Dark theme */
+        .dark-theme {
+            --primary-color: rgba(0, 119, 255, 0.296);
+            --secondary-color: black;
+        }
+        
+        /* Query FOrm */
+        .query {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .rectangle {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #F2F3F5;
+            border-radius: 8px;
+            width: 500px;
+            height: 80px;
+            margin-top: 176px;
+        }
+        
+        #uploaded-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .search-box {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 8px;
+            padding: 8px;
+        }
+        
+        #search-input {
+            border: none;
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+        
+        .pop-up {
+            position: absolute;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 291px;
+        }
+        
+        .pop-up:hover {
+            background-color: #333333;
+        }
+        </style>
+        
+
+    <script>
+        function toggleTheme() {
+            var sunIcon = document.getElementById("sun-icon");
+            var moonIcon = document.getElementById("moon-icon");
+            var navbar = document.querySelector(".navbar");
+
+            sunIcon.style.display = sunIcon.style.display === "none" ? "inline-block" : "none";
+            moonIcon.style.display = moonIcon.style.display === "none" ? "inline-block" : "none";
+            navbar.classList.toggle("dark-theme");
+        }
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#"><img src="../Image/logo.jpg" alt="Logo"></a>
+        </div>
+
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Vacancy</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="Career.HTML">Career</a></li>
+        </ul>
+
+        <div class="navbar-search">
+            <form action="#" method="GET" class="searchbar">
+                <input type="text" id="search-item" placeholder="Search..." onkeyup="search()">
+                <i class="bx bx-search-alt-2"></i>
+            </form>
+        </div>
+
+        <div class="navbar-icons">
+            <a href="#"><i class="bx bxs-cart"></i></a>
+            <a href="Login.html"><i class="bx bxs-user"></i></a>
+            <a href="#" onclick="toggleTheme()"><i id="sun-icon" class="bx bxs-sun"></i></a>
+            <a href="#" onclick="toggleTheme()"><i id="moon-icon" class='bx bxs-moon' style="display: none;"></i></a>
+        </div>
+    </nav>
+
+    <!-- Query Form -->
+    <div class="query">
+        <div class="rectangle">
+            <img id="uploaded-photo" src="uploaded_photo.jpg" alt="Uploaded Photo">
+            <div class="search-box">
+                <input id="search-input" type="text" placeholder="What's on your mind, Geenesh?">
+                <a href="popup.html" class="pop-up">Choose a photo</a>
+            </div>
+        </div>
+    </div>
+</body>
+<!--  -->
+
+
+
+
+</body>
+
+</html>

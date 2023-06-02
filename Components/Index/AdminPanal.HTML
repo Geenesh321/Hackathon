@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Nav</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: black;
+            --secondary-color: white;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            height: 80px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        /* Logo styles */
+        .navbar-logo img {
+            height: 61px;
+            width: 95px;
+            margin-left: -5px;
+        }
+
+        /* Links styles */
+        .navbar-links {
+            display: flex;
+        }
+
+        .navbar-links li {
+            margin-right: 80px;
+        }
+
+        .navbar-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar-icons {
+            display: flex;
+        }
+
+        .navbar-icons a,
+        .bx {
+            margin-left: 25px;
+            color: var(--secondary-color);
+            font-size: 30px;
+        }
+
+        .navbar-icons a i,
+        .bx {
+            align-items: center;
+            height: 40px;
+            width: 40px;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#"><img src="../Image/logo.jpg" alt="Logo"></a>
+        </div>
+
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Vacancy</a></li>
+            <li><a href="#">Chat</a></li>
+        </ul>
+        <div class="navbar-icons">
+            <a href="Login.html"><i class="bx bxs-user"></i></a>
+        </div>
+    </nav>
+</body>
+
+</html>
+
+               
